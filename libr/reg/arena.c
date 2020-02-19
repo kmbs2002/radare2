@@ -185,6 +185,7 @@ R_API void r_reg_arena_free(RRegArena *ra) {
 }
 
 R_API void r_reg_arena_swap(RReg *reg, int copy) {
+	eprintf("kmbs: f:%s\n",__func__);
 	/* XXX: swap current arena to head(previous arena) */
 	int i;
 	for (i = 0; i < R_REG_TYPE_LAST; i++) {
@@ -194,6 +195,8 @@ R_API void r_reg_arena_swap(RReg *reg, int copy) {
 		if (r_list_length (reg->regset[i].pool) > 1) {
 			RListIter *ia = reg->regset[i].cur;
 			RListIter *ib = reg->regset[i].pool->head;
+			//			p reg->regset[i].regs->head->data
+//			eprintf("kmbs: f:%s name:%s cur:%p head:%p\n",__func__,reg->regset[i].regs->name, (void *) reg->regset[i].cur,(void *) reg->regset[i].pool->head);
 			void *tmp = ia->data;
 			ia->data = ib->data;
 			ib->data = tmp;

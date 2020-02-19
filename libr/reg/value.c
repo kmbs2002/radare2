@@ -136,6 +136,7 @@ R_API ut64 r_reg_get_value_by_role(RReg *reg, RRegisterId role) {
 }
 
 R_API bool r_reg_set_value(RReg *reg, RRegItem *item, ut64 value) {
+	eprintf("kmbs: f:%s\titem{name:%s\tarena:%02x}\tval:%02x\n",__func__,item->name,item->arena,value);
 	ut8 bytes[12];
 	ut8 *src = bytes;
 	r_return_val_if_fail (reg && item, false);
