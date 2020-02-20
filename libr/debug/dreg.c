@@ -84,6 +84,9 @@ R_API int r_debug_reg_sync(RDebug *dbg, int type, int write) {
 
 R_API int r_debug_reg_list(RDebug *dbg, int type, int size, int rad, const char *use_color) {
 	eprintf("kmbs: f:%s\ttype:%d\tsize:%d\trad:%d\n",__func__,type,size,rad);
+	//rad=3 ard
+	//rad=0 aro
+	//rad=2 ar=
 	int i, delta, from, to, cols, n = 0;
 	const char *fmt, *fmt2, *kwhites;
 	RPrint *pr = NULL;
