@@ -2985,6 +2985,7 @@ static void cmd_debug_reg(RCore *core, const char *str) {
 		break;
 	case '=': // "dr="
 		{
+			eprintf("kmbs f:%s str:%s\n");
 			int pcbits2, pcbits = grab_bits (core, str + 1, &pcbits2);
 			if (r_config_get_i (core->config, "cfg.debug")) {
 				if (r_debug_reg_sync (core->dbg, R_REG_TYPE_GPR, false)) {

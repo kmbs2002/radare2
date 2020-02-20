@@ -185,7 +185,7 @@ R_API void r_reg_arena_free(RRegArena *ra) {
 }
 
 R_API void r_reg_arena_swap(RReg *reg, int copy) {
-	eprintf("kmbs: f:%s\n",__func__);
+//	eprintf("kmbs: f:%s\n",__func__);
 	/* XXX: swap current arena to head(previous arena) */
 	int i;
 	for (i = 0; i < R_REG_TYPE_LAST; i++) {
