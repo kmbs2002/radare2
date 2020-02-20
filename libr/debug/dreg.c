@@ -272,6 +272,7 @@ R_API int r_debug_reg_list(RDebug *dbg, int type, int size, int rad, const char 
 				}
 				break;
 			default:
+				eprintf("kmbs: f:%s\t switch(rad) default\n",__func__,type,size,rad);
 				if (delta && use_color) {
 					dbg->cb_printf (use_color);
 					dbg->cb_printf (fmt, item->name, strvalue, Color_RESET"\n");
